@@ -21,6 +21,9 @@ is well-suited for sorting large lists or when stability is required. However,
 merge sort has a space complexity of O(n) due to the additional space required 
 for merging the sublists.
 
+questions -------
+which sorting algorithm is suitable for linked list ?
+which sorting algorithm gives O(n log n) in all cases ?
 '''
 
 # merge is the helper function to create sorted array from the divided array

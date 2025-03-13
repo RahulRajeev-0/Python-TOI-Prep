@@ -1,7 +1,6 @@
 '''
 question -> write a function to merge two linked list 
 
-
 '''
 
 def merge_linked_list(left, right):
