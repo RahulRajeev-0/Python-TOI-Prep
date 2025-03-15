@@ -15,25 +15,32 @@ class HashTable:
 
 
     def get_hash(self,key):
-        h = 0
+        hash_code = 0
         for i in key:
-            h += ord(i)
-        return h % self.Max
+            hash_code += ord(i)
+        return hash_code % self.Max
     
     def __setitem__(self, key, value):
-        h = self.get_hash(key)
-        while self.array[h] is not None:
-            h = (h + 1) % self.Max
-        self.array[h] = key, value
+        hash_code = self.get_hash(key)
+        probe = 0
+        while self.array[hash_code] is not None:
+            if probe >= self.Max: # for avoiding infinit loops in case of hash table is full
+                raise Exception ("Hash Table is full !")
+            hash_code = (hash_code + 1) % self.Max
+            probe += 1
+        self.array[hash_code] = key, value
     
 
     # answer for the question 
     def __getitem__(self,key):
-        h = self.get_hash(key)
-        while self.array[h] is not None:
-            if self.array[h][0] == key:
-                return self.array[h][1]
-            h = (h + 1) % self.Max
+        hash_code = self.get_hash(key)
+        probe = 0
+        while self.array[hash_code] is not None and probe < self.Max:
+            if self.array[hash_code][0] == key:
+                return self.array[hash_code][1]
+            hash_code = (hash_code + 1) % self.Max
+            probe += 1
+
         return 'not found'
 
 
