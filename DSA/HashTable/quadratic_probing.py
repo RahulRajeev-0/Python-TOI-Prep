@@ -34,12 +34,12 @@ class HashTable:
         return str(self.array)
 
 
-h = HashTable(10)
-h['name'] = 'rahul'
-h['age'] = 20
-print(h['age'])
-print(h['name'])
-print(h['email'])
+hashmap = HashTable(10)
+hashmap['abc'] = 'rahul'
+hashmap['bcd'] = 20
+
+print(hashmap['abc'])
+print(hashmap['bcd'])
 
 
 

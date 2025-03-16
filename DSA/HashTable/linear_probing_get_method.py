@@ -45,8 +45,9 @@ class HashTable:
 
 
 hashmap = HashTable()
-hashmap['name'] = 'rahul'
-hashmap['age'] = 20
-print(hashmap['name'])
-print(hashmap.array)
+hashmap['abc'] = 'rahul'
+hashmap['bcd'] = 20
+
+print(hashmap['abc'])
+print(hashmap['bcd'])
 
