@@ -1,12 +1,17 @@
 '''
 question -> remove word from tries data structures 
+
+deletion of word from tries algorithm 
+iterate through the tries child nodes if the char of the give word is present else return 
+go to the last node check if it is the end character , change it false , if there is no children del it 
+do the same for all 
+
 '''
 
 class Node:
     def __init__(self) -> None:
         self.children = {}
         self.is_end = False
-
 
 
 class Trie:
@@ -58,6 +63,8 @@ class Trie:
     def delete(self, word):
         if not word:return 
         self.delete_helper(self.root,word,0)
+
+
 
 t = Trie()
 t.add('rahul')

@@ -7,10 +7,10 @@ def find_combinations(arr, target):
     arr.sort()  # Optional: sort the array to handle duplicates and to make the backtracking more efficient
     
     def backtrack(start, path, target):
-        if target == 0:
+        if target == 0: # if target is 0 then append to result
             result.append(path)
             return
-        if target < 0:
+        if target < 0: # if target < 0 combination didn't worked out 
             return
         
         for i in range(start, len(arr)):
